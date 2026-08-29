@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
 title: "qgemv-roofline: a quantized GEMV kernel ladder measured against its own bandwidth roof"
+doi: "10.5281/zenodo.22164007"
 abstract: >-
   Twelve CUDA kernels and a Triton implementation of the batch-1 LLM decode
   GEMV over ggml q8_0 and q4_0 weights, measured on five NVIDIA GPUs spanning
