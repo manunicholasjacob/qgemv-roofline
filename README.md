@@ -65,7 +65,7 @@ kernel running at 274% of its own measured DRAM roof, which is impossible and is
 how the problem was caught. The cross-architecture page marks those figures
 device L2 instead of assuming a shape, and every cloud run was repeated at an
 L2-safe shape. On this card the large shape reproduces the 48 MB result exactly,
-121.8 GB/s against 121.5, so nothing here was cache-flattered.
+121.5 GB/s at 408 MiB against 121.8 at 48 MB, so nothing here was cache-flattered.
 
 One further caveat, found by repeating rather than by reasoning. The ALU-bound
 `q4_0` kernel at the 408 MiB shape reported 5.007 ms in one session and 3.99 ms
@@ -100,13 +100,13 @@ At `11008 x 4096`, `q8_0`:
 
 | kernel | weight layout | x lives in | ms | GB/s | % of roof |
 |---|---|---|---|---|---|
-| `q8_v0_naive` | ggml AoS | global | 2.0419 | 23.5 | 13.7% |
-| `q8_v1_warp` | ggml AoS | global | 1.8166 | 26.4 | 15.4% |
-| `q8_v3_soa_vec` | SoA, 16 B loads | global | 0.8571 | 55.9 | 32.6% |
-| `q8_v2_smem_x` | ggml AoS | shared | 0.6298 | 76.1 | 44.4% |
-| `q8_v5_soa_smem` | SoA, 16 B loads | shared | **0.3942** | **121.5** | **70.9%** |
+| `q8_v0_naive` | ggml AoS | global | 2.0398 | 23.5 | 13.7% |
+| `q8_v1_warp` | ggml AoS | global | 1.8225 | 26.3 | 15.3% |
+| `q8_v3_soa_vec` | SoA, 16 B loads | global | 0.8588 | 55.8 | 32.5% |
+| `q8_v2_smem_x` | ggml AoS | shared | 0.6459 | 74.2 | 43.3% |
+| `q8_v5_soa_smem` | SoA, 16 B loads | shared | **0.3932** | **121.8** | **71.1%** |
 
-**5.18x from the naive kernel to the best one**, ending at 70.9% of the measured
+**5.19x from the naive kernel to the best one**, ending at 71.1% of the measured
 roof. The gap that remains is discussed under limitations, and it is not closed.
 
 The middle of that table is the part worth reading. The two changes were
@@ -116,8 +116,8 @@ them:
 | change | speedup over the AoS baseline |
 |---|---|
 | weight layout only (AoS to SoA) | 2.12x |
-| activation placement only (global to shared) | **2.88x** |
-| both | 4.61x |
+| activation placement only (global to shared) | **2.82x** |
+| both | 4.63x |
 
 **Staging the activation vector in shared memory mattered more than the weight
 layout, on a kernel where the weights outweigh the activations by three orders
@@ -132,17 +132,17 @@ regions of `x` in the same instruction. That is a 32-way gather issued once per
 block per warp, and it stalls the load pipe long before the weight stream
 saturates DRAM. Staging `x` once per block converts it into a broadcast.
 
-The two effects multiply to 6.11x in isolation but deliver 4.61x together. They
+The two effects multiply to 5.99x in isolation but deliver 4.63x together. They
 are not independent, because both were relieving the same stall.
 
 ## Finding 2: the naive kernel beats the optimised one, for `q4_0`
 
 | kernel | ms |
 |---|---|
-| `q4_v0_naive`, thread per row | 1.1059 |
+| `q4_v0_naive`, thread per row | 1.1110 |
 | `q4_v1_warp`, warp per row | 1.7326 |
 
-The textbook optimisation makes it **1.57x slower**. The naive kernel puts every
+The textbook optimisation makes it **1.56x slower**. The naive kernel puts every
 thread in a block on the same block index at the same time, so all 256 threads
 read the *same* elements of `x` and the hardware broadcasts them for free. Its
 weight access is genuinely terrible and it does not matter, because `x` was the
@@ -261,7 +261,7 @@ hypothesis is worth more than one that was never tried.
 
 ## Limitations
 
-1. **70.9% of the roof is not the roof.** The best kernel leaves 29% on the
+1. **71% of the roof is not the roof.** The best kernel leaves 29% on the
    table. The best available hypothesis is the K=8192 occupancy result above:
    shared-memory pressure and the per-row warp reduction both cost residency,
    and neither was tuned. This is a measured shortfall with a hypothesis, not a
