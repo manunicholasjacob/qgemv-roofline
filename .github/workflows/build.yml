@@ -1,0 +1,51 @@
+# What this can and cannot check.
+#
+# GitHub-hosted runners have no GPU, so this workflow CANNOT execute a single
+# kernel and CANNOT verify numerical correctness. It compiles every kernel for
+# five architectures to catch build breakage, and runs the host-side quantizer
+# and reference code on CPU.
+#
+# The real correctness evidence is 39 checks against a double-precision CPU
+# reference, run on five GPUs (sm_60, sm_75, sm_80, sm_86, sm_89), recorded in
+# results/ and summarised in docs/CROSS_ARCH.md. A green badge here means the
+# code builds, nothing more, and the README says so.
+
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install CUDA toolkit (compiler only, no driver)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq nvidia-cuda-toolkit
+          nvcc --version
+
+      - name: Compile kernels for five architectures
+        run: |
+          set -e
+          for arch in sm_60 sm_75 sm_80 sm_86 sm_89; do
+            echo "=== $arch ==="
+            nvcc -O3 -std=c++17 -arch=$arch -Isrc -c src/bench.cu -o /tmp/bench_$arch.o
+          done
+          echo "all architectures compiled"
+
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -q numpy torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Quantizer round-trip on CPU
+        run: python tests/test_quant_cpu.py

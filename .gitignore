@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.o
+*.ncu-rep
+*.nsys-rep
+results/triton_err.log

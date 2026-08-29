@@ -1,0 +1,4 @@
+{"device": "NVIDIA GeForce RTX 3050 Laptop GPU", "cc": "sm_86", "sms": 16, "torch": "2.11.0+cu128", "triton": "3.6.0", "M": 11008, "K": 4096}
+{"kernel": "triton_q8_soa", "format": "q8_0", "ms_median": 0.5171200037002563, "ms_min": 0.5130239725112915, "ms_sd": 0.02525308203263589, "gbps": 92.64158349551823, "max_abs_err": 1.52587890625e-05, "max_rel_err": 1.915963356434423e-07}
+{"kernel": "triton_q4_soa", "format": "q4_0", "ms_median": 0.48947200179100037, "ms_min": 0.47411200404167175, "ms_sd": 0.022852844756812478, "gbps": 51.81589939199321, "max_abs_err": 1.52587890625e-05, "max_rel_err": 1.9427659216709807e-07}
+{"kernel": "torch_fp16_mv", "format": "fp16", "ms_median": 0.5345280170440674, "ms_min": 0.531328022480011, "ms_sd": 0.027616665326174215, "gbps": 168.70497546355108, "max_abs_err": null, "max_rel_err": null}

@@ -1,0 +1,161 @@
+[{"stream_name":"stderr","time":6.806612479,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.806697162,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.806703944,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.806708305,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.418024913,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.418060362,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.418065857,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.4180852,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.583261788,"data":"Sat Aug 29 01:28:43 2026       \n"}
+,{"stream_name":"stdout","time":8.583307104,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":8.583312221,"data":"| NVIDIA-SMI 580.159.04             Driver Version: 580.159.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":8.583316139,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":8.583327074,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":8.583330821,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":8.583334345,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":8.583337874,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":8.583341514,"data":"|   0  Tesla P100-PCIE-16GB           Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":8.583344927,"data":"| N/A   39C    P0             27W /  250W |       0MiB /  16384MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":8.583348375,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":8.583351782,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":8.583355205,"data":"\n"}
+,{"stream_name":"stdout","time":8.583358064,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":8.583361385,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":8.583365667,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":8.583369383,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":8.583373721,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":8.583377154,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":8.583410488,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":8.583419062,"data":"\n"}
+,{"stream_name":"stdout","time":8.583422241,"data":"nvcc: NVIDIA (R) Cuda compiler driver\n"}
+,{"stream_name":"stdout","time":8.583425491,"data":"Copyright (c) 2005-2025 NVIDIA Corporation\n"}
+,{"stream_name":"stdout","time":8.583429001,"data":"Built on Fri_Feb_21_20:23:50_PST_2025\n"}
+,{"stream_name":"stdout","time":8.583432846000001,"data":"Cuda compilation tools, release 12.8, V12.8.93\n"}
+,{"stream_name":"stdout","time":8.583436303,"data":"Build cuda_12.8.r12.8/compiler.35583870_0\n"}
+,{"stream_name":"stdout","time":8.583440604,"data":"\n"}
+,{"stream_name":"stdout","time":8.602816965,"data":"kernels 13624 bytes\n"}
+,{"stream_name":"stdout","time":8.623225254,"data":"bench 16854 bytes\n"}
+,{"stream_name":"stderr","time":13.301968605,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":13.301998736,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":13.302004147,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":13.302008398,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":13.302017428,"data":"    \n"}
+,{"stream_name":"stderr","time":13.302020293,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":13.302022669,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":13.302025185,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":13.302027816,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":13.302030326,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":13.302032689,"data":"    \n"}
+,{"stream_name":"stderr","time":13.302034957,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":13.302037356,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":13.302039803,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":13.302042246,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":13.302044704,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":13.302047275,"data":"\n"}
+,{"stream_name":"stderr","time":13.302049519,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":13.302051825,"data":"\n"}
+,{"stream_name":"stderr","time":13.302054077,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":13.302056698,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":13.302059074,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":13.30206149,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":13.302063804,"data":"    \n"}
+,{"stream_name":"stderr","time":13.302066105,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":13.302068376,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":13.302080668,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":13.302083284,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":13.302085654,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":13.302088052,"data":"    \n"}
+,{"stream_name":"stderr","time":13.302090306,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":13.302092565,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":13.302095056,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":13.302097502,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":13.302099993,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":13.30210333,"data":"\n"}
+,{"stream_name":"stderr","time":13.302106622,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":13.303037329,"data":"building for sm_60\n"}
+,{"stream_name":"stdout","time":18.768892189,"data":"0\n"}
+,{"stream_name":"stdout","time":18.768925999,"data":"\n"}
+,{"stream_name":"stdout","time":18.768931973,"data":"nvcc warning : Support for offline compilation for architectures prior to '\u003ccompute/sm/lto\u003e_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).\n"}
+,{"stream_name":"stdout","time":18.768941003,"data":"\n"}
+,{"stream_name":"stdout","time":18.9699616,"data":"=== measured bandwidth ceiling ===\n"}
+,{"stream_name":"stdout","time":19.318180093,"data":"{\"device\": \"Tesla P100-PCIE-16GB\", \"cc\": \"sm_60\", \"sms\": 56, \"l2_bytes\": 4194304, \"mem_clock_khz\": 715000, \"bus_bits\": 4096, \"sm_clock_khz\": 1328500, \"datasheet_gbps_x2\": 732.16}\n"}
+,{"stream_name":"stdout","time":19.318220807,"data":"{\"kernel\": \"stream_read\", \"bytes\": 536870912, \"ms_median\": 0.894976, \"ms_min\": 0.892256, \"ms_sd\": 0.002512, \"gbps_median\": 599.872, \"gbps_max\": 601.701}\n"}
+,{"stream_name":"stdout","time":19.318226875,"data":"{\"kernel\": \"memcpy_d2d\", \"bytes\": 1073741824, \"ms_median\": 2.001312, \"gbps_median\": 536.519}\n"}
+,{"stream_name":"stdout","time":19.31823162,"data":"\n"}
+,{"stream_name":"stdout","time":19.31823549,"data":"=== ladder 4096x4096 ===\n"}
+,{"stream_name":"stdout","time":20.83043354,"data":"{\"device\": \"Tesla P100-PCIE-16GB\", \"cc\": \"sm_60\", \"sms\": 56, \"l2_bytes\": 4194304, \"mem_clock_khz\": 715000, \"bus_bits\": 4096, \"sm_clock_khz\": 1328500, \"datasheet_gbps_x2\": 732.16}\n"}
+,{"stream_name":"stdout","time":20.830469246,"data":"{\"kernel\": \"q8_v0_naive\", \"format\": \"q8_0\", \"layout\": \"aos\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.978528, \"ms_min\": 0.974368, \"ms_p95\": 0.983232, \"ms_sd\": 0.002452, \"gbps\": 18.217, \"max_abs_err\": 3.07056e-05, \"max_rel_err\": 3.33582e-07}\n"}
+,{"stream_name":"stdout","time":20.83047565,"data":"{\"kernel\": \"q8_v1_warp\", \"format\": \"q8_0\", \"layout\": \"aos\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.336864, \"ms_min\": 0.327136, \"ms_p95\": 0.359488, \"ms_sd\": 0.010836, \"gbps\": 52.917, \"max_abs_err\": 1.07983e-05, \"max_rel_err\": 1.17311e-07}\n"}
+,{"stream_name":"stdout","time":20.830481836,"data":"{\"kernel\": \"q8_v2_smem_x\", \"format\": \"q8_0\", \"layout\": \"aos\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.103488, \"ms_min\": 0.096, \"ms_p95\": 0.105664, \"ms_sd\": 0.003883, \"gbps\": 172.25, \"max_abs_err\": 1.07983e-05, \"max_rel_err\": 1.17311e-07}\n"}
+,{"stream_name":"stdout","time":20.830504373,"data":"{\"kernel\": \"q8_v3_soa_vec\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.26192, \"ms_min\": 0.26128, \"ms_p95\": 0.263392, \"ms_sd\": 0.004121, \"gbps\": 68.058, \"max_abs_err\": 1.15344e-05, \"max_rel_err\": 1.25308e-07}\n"}
+,{"stream_name":"stdout","time":20.830509952,"data":"{\"kernel\": \"q8_v4_split2\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.249152, \"ms_min\": 0.24864, \"ms_p95\": 0.261088, \"ms_sd\": 0.002968, \"gbps\": 71.546, \"max_abs_err\": 9.63962e-06, \"max_rel_err\": 1.04724e-07}\n"}
+,{"stream_name":"stdout","time":20.83051557,"data":"{\"kernel\": \"q8_v4_split4\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.242752, \"ms_min\": 0.242176, \"ms_p95\": 0.249056, \"ms_sd\": 0.002765, \"gbps\": 73.432, \"max_abs_err\": 1.02677e-05, \"max_rel_err\": 1.11547e-07}\n"}
+,{"stream_name":"stdout","time":20.830521487,"data":"{\"kernel\": \"q8_v5_soa_smem\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 17825792, \"ms_median\": 0.058176, \"ms_min\": 0.05488, \"ms_p95\": 0.059232, \"ms_sd\": 0.001186, \"gbps\": 306.411, \"max_abs_err\": 1.15344e-05, \"max_rel_err\": 1.25308e-07}\n"}
+,{"stream_name":"stdout","time":20.830528482,"data":"{\"kernel\": \"q4_v0_naive\", \"format\": \"q4_0\", \"layout\": \"aos\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 9437184, \"ms_median\": 0.554016, \"ms_min\": 0.551136, \"ms_p95\": 0.556992, \"ms_sd\": 0.002177, \"gbps\": 17.034, \"max_abs_err\": 3.57644e-05, \"max_rel_err\": 3.94633e-07}\n"}
+,{"stream_name":"stdout","time":20.830533613,"data":"{\"kernel\": \"q4_v1_warp\", \"format\": \"q4_0\", \"layout\": \"aos\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 9437184, \"ms_median\": 0.302496, \"ms_min\": 0.301824, \"ms_p95\": 0.303648, \"ms_sd\": 0.001626, \"gbps\": 31.198, \"max_abs_err\": 9.78859e-06, \"max_rel_err\": 1.0801e-07}\n"}
+,{"stream_name":"stdout","time":20.830538848,"data":"{\"kernel\": \"q4_v2_smem_x\", \"format\": \"q4_0\", \"layout\": \"aos\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 9437184, \"ms_median\": 0.09088, \"ms_min\": 0.088704, \"ms_p95\": 0.091872, \"ms_sd\": 0.00074, \"gbps\": 103.842, \"max_abs_err\": 9.78859e-06, \"max_rel_err\": 1.0801e-07}\n"}
+,{"stream_name":"stdout","time":20.830545256,"data":"{\"kernel\": \"q4_v3_soa_vec\", \"format\": \"q4_0\", \"layout\": \"soa\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 9437184, \"ms_median\": 0.256928, \"ms_min\": 0.256512, \"ms_p95\": 0.257536, \"ms_sd\": 0.000934, \"gbps\": 36.731, \"max_abs_err\": 9.78859e-06, \"max_rel_err\": 1.0801e-07}\n"}
+,{"stream_name":"stdout","time":20.830550721,"data":"{\"kernel\": \"q4_v5_soa_smem\", \"format\": \"q4_0\", \"layout\": \"soa\", \"M\": 4096, \"K\": 4096, \"weight_bytes\": 9437184, \"ms_median\": 0.075264, \"ms_min\": 0.073952, \"ms_p95\": 0.076064, \"ms_sd\": 0.001149, \"gbps\": 125.388, \"max_abs_err\": 9.78859e-06, \"max_rel_err\": 1.0801e-07}\n"}
+,{"stream_name":"stdout","time":20.830556072,"data":"\n"}
+,{"stream_name":"stdout","time":20.83055953,"data":"=== ladder 11008x4096 ===\n"}
+,{"stream_name":"stdout","time":24.008920821,"data":"{\"device\": \"Tesla P100-PCIE-16GB\", \"cc\": \"sm_60\", \"sms\": 56, \"l2_bytes\": 4194304, \"mem_clock_khz\": 715000, \"bus_bits\": 4096, \"sm_clock_khz\": 1328500, \"datasheet_gbps_x2\": 732.16}\n"}
+,{"stream_name":"stdout","time":24.008977953,"data":"{\"kernel\": \"q8_v0_naive\", \"format\": \"q8_0\", \"layout\": \"aos\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 1.012256, \"ms_min\": 1.005792, \"ms_p95\": 1.02176, \"ms_sd\": 0.003807, \"gbps\": 47.327, \"max_abs_err\": 3.10907e-05, \"max_rel_err\": 3.71797e-07}\n"}
+,{"stream_name":"stdout","time":24.009004547,"data":"{\"kernel\": \"q8_v1_warp\", \"format\": \"q8_0\", \"layout\": \"aos\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 0.885632, \"ms_min\": 0.857184, \"ms_p95\": 0.903008, \"ms_sd\": 0.010084, \"gbps\": 54.093, \"max_abs_err\": 1.11673e-05, \"max_rel_err\": 1.33544e-07}\n"}
+,{"stream_name":"stdout","time":24.009008783,"data":"{\"kernel\": \"q8_v2_smem_x\", \"format\": \"q8_0\", \"layout\": \"aos\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 0.215136, \"ms_min\": 0.209376, \"ms_p95\": 0.220608, \"ms_sd\": 0.003062, \"gbps\": 222.682, \"max_abs_err\": 1.11673e-05, \"max_rel_err\": 1.33544e-07}\n"}
+,{"stream_name":"stdout","time":24.009012204,"data":"{\"kernel\": \"q8_v3_soa_vec\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 0.672064, \"ms_min\": 0.671328, \"ms_p95\": 0.678464, \"ms_sd\": 0.004844, \"gbps\": 71.283, \"max_abs_err\": 9.42359e-06, \"max_rel_err\": 1.12692e-07}\n"}
+,{"stream_name":"stdout","time":24.009015473,"data":"{\"kernel\": \"q8_v4_split2\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 0.64656, \"ms_min\": 0.645888, \"ms_p95\": 0.650688, \"ms_sd\": 0.002822, \"gbps\": 74.095, \"max_abs_err\": 9.24527e-06, \"max_rel_err\": 1.10559e-07}\n"}
+,{"stream_name":"stdout","time":24.009018796,"data":"{\"kernel\": \"q8_v4_split4\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 0.640064, \"ms_min\": 0.639456, \"ms_p95\": 0.645632, \"ms_sd\": 0.001889, \"gbps\": 74.847, \"max_abs_err\": 9.81002e-06, \"max_rel_err\": 1.17313e-07}\n"}
+,{"stream_name":"stdout","time":24.009022289,"data":"{\"kernel\": \"q8_v5_soa_smem\", \"format\": \"q8_0\", \"layout\": \"soa\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 47906816, \"ms_median\": 0.128032, \"ms_min\": 0.125792, \"ms_p95\": 0.129472, \"ms_sd\": 0.000821, \"gbps\": 374.178, \"max_abs_err\": 9.42359e-06, \"max_rel_err\": 1.12692e-07}\n"}
+,{"stream_name":"stdout","time":24.009027211,"data":"{\"kernel\": \"q4_v0_naive\", \"format\": \"q4_0\", \"layout\": \"aos\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 25362432, \"ms_median\": 0.564768, \"ms_min\": 0.56192, \"ms_p95\": 0.56768, \"ms_sd\": 0.001971, \"gbps\": 44.908, \"max_abs_err\": 3.63526e-05, \"max_rel_err\": 4.49981e-07}\n"}
+,{"stream_name":"stdout","time":24.009030481,"data":"{\"kernel\": \"q4_v1_warp\", \"format\": \"q4_0\", \"layout\": \"aos\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 25362432, \"ms_median\": 0.7784, \"ms_min\": 0.776672, \"ms_p95\": 0.78624, \"ms_sd\": 0.004473, \"gbps\": 32.583, \"max_abs_err\": 1.05595e-05, \"max_rel_err\": 1.30708e-07}\n"}
+,{"stream_name":"stdout","time":24.009033751,"data":"{\"kernel\": \"q4_v2_smem_x\", \"format\": \"q4_0\", \"layout\": \"aos\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 25362432, \"ms_median\": 0.19616, \"ms_min\": 0.189504, \"ms_p95\": 0.2, \"ms_sd\": 0.003312, \"gbps\": 129.295, \"max_abs_err\": 1.05595e-05, \"max_rel_err\": 1.30708e-07}\n"}
+,{"stream_name":"stdout","time":24.009036988,"data":"{\"kernel\": \"q4_v3_soa_vec\", \"format\": \"q4_0\", \"layout\": \"soa\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 25362432, \"ms_median\": 0.659392, \"ms_min\": 0.634112, \"ms_p95\": 0.661344, \"ms_sd\": 0.002559, \"gbps\": 38.463, \"max_abs_err\": 1.05595e-05, \"max_rel_err\": 1.30708e-07}\n"}
+,{"stream_name":"stdout","time":24.009040163,"data":"{\"kernel\": \"q4_v5_soa_smem\", \"format\": \"q4_0\", \"layout\": \"soa\", \"M\": 11008, \"K\": 4096, \"weight_bytes\": 25362432, \"ms_median\": 0.172384, \"ms_min\": 0.170656, \"ms_p95\": 0.174304, \"ms_sd\": 0.002129, \"gbps\": 147.128, \"max_abs_err\": 1.05595e-05, \"max_rel_err\": 1.30708e-07}\n"}
+,{"stream_name":"stdout","time":24.009046084,"data":"\n"}
+,{"stream_name":"stdout","time":24.033241149,"data":"ncu: /usr/local/cuda/bin/ncu\n"}
+,{"stream_name":"stdout","time":24.033267982,"data":"running as uid 0\n"}
+,{"stream_name":"stdout","time":24.209565488,"data":"======================== q8_v1_warp\n"}
+,{"stream_name":"stdout","time":27.909328904,"data":"counters refused on this VM (ERR_NVGPUCTRPERM). Nothing to fix from inside the notebook.\n"}
+,{"stream_name":"stdout","time":27.949556459,"data":"Tesla P100-PCIE-16GB: energy counter NOT supported (Not Supported). Skipping energy.\n"}
+,{"stream_name":"stdout","time":32.489682545,"data":"\n"}
+,{"stream_name":"stdout","time":32.489722275,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stdout","time":32.489728056,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stdout","time":32.489732318,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stdout","time":32.489736283,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stdout","time":32.489745159,"data":"    \n"}
+,{"stream_name":"stdout","time":32.489748333,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":32.489751246,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stdout","time":32.489771867,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stdout","time":32.489776538,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stdout","time":32.489792285,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stdout","time":32.489796192,"data":"    \n"}
+,{"stream_name":"stdout","time":32.489799624,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":32.489802768,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stdout","time":32.489806304,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stdout","time":32.489810096,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stdout","time":32.489813509,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stdout","time":32.489828808,"data":"\n"}
+,{"stream_name":"stdout","time":32.489831792,"data":"  queued_call()\n"}
+,{"stream_name":"stdout","time":32.489835275,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stdout","time":32.489838426,"data":"  File \"/tmp/qgemv/triton_qgemv.py\", line 235, in \u003cmodule\u003e\n"}
+,{"stream_name":"stdout","time":32.489842366,"data":"    main()\n"}
+,{"stream_name":"stdout","time":32.489845527,"data":"  File \"/tmp/qgemv/triton_qgemv.py\", line 164, in main\n"}
+,{"stream_name":"stdout","time":32.489848897,"data":"    W = (torch.rand(M, K, device=dev) * 2 - 1)\n"}
+,{"stream_name":"stdout","time":32.489852204,"data":"         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stdout","time":32.489855964,"data":"torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device\n"}
+,{"stream_name":"stdout","time":32.489860642,"data":"Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\n"}
+,{"stream_name":"stdout","time":32.489887609,"data":"CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\n"}
+,{"stream_name":"stdout","time":32.489891789,"data":"For debugging consider passing CUDA_LAUNCH_BLOCKING=1\n"}
+,{"stream_name":"stdout","time":32.48989519,"data":"Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"}
+,{"stream_name":"stdout","time":32.489898667,"data":"\n"}
+,{"stream_name":"stdout","time":32.489902031,"data":"\n"}
+,{"stream_name":"stdout","time":32.505993609,"data":"wrote /kaggle/working/qgemv_results.json\n"}
+,{"stream_name":"stderr","time":35.762371699,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":35.762441727,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":35.928112285,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":35.928155373,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":36.599855842,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":36.950091407,"data":"[NbConvertApp] Writing 82597 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":39.622564298,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":40.577341203,"data":"[NbConvertApp] Writing 399153 bytes to __results__.html\n"}
+]

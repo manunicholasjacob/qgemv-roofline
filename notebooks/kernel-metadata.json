@@ -1,0 +1,16 @@
+{
+  "id": "manunicholasjacob/qgemv-kernel-ladder-p100",
+  "title": "QGEMV Kernel Ladder P100",
+  "code_file": "qgemv_portable.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "gpu_p100",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
