@@ -299,6 +299,7 @@ hypothesis is worth more than one that was never tried.
 ```
 src/qgemv_kernels.cuh   nine kernels: two formats x {AoS, SoA} x {x global, x shared}
 src/bench.cu            correctness against a double-precision CPU reference, then timing
+python/qformats.py      ggml q8_0 and q4_0 in pure PyTorch, no GPU needed
 python/triton_qgemv.py  the same kernel in Triton, plus PyTorch reference and cuBLAS
 scripts/energy_probe.py NVML monotonic energy counter, two reads per window, never sampled
 scripts/summarize.py    regenerates docs/RESULTS.md from results/

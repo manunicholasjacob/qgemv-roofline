@@ -1,6 +1,7 @@
 """CPU-only checks that run without a GPU, so CI can run them.
 
-This does NOT test any kernel. It tests the quantizers and the dequantizers
+This does NOT test any kernel. It tests python/qformats.py, the quantizers and
+dequantizers
 that the GPU kernels are checked against, which is the part of the correctness
 argument that does not need a device. The kernels themselves are checked on
 five GPUs; see docs/CROSS_ARCH.md.
@@ -22,8 +23,8 @@ import sys
 import torch
 
 sys.path.insert(0, "python")
-from triton_qgemv import (QK, dequant_q4_0, dequant_q8_0, quantize_q4_0,  # noqa: E402
-                          quantize_q8_0)
+from qformats import (QK, dequant_q4_0, dequant_q8_0, quantize_q4_0,  # noqa: E402
+                      quantize_q8_0)
 
 FAIL = []
 
