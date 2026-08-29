@@ -1,7 +1,15 @@
 # Quantized GEMV: writing the kernel that hits the wall
 
-One decode-path operation, written nine ways, measured against a bandwidth roof
-this repository measures for itself.
+[![build](https://github.com/manunicholasjacob/qgemv-roofline/actions/workflows/build.yml/badge.svg)](https://github.com/manunicholasjacob/qgemv-roofline/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+One decode-path operation, written thirteen ways, measured against a bandwidth
+roof this repository measures for itself.
+
+**The badge means the code compiles for five architectures and the host-side
+maths is right. It does not mean the kernels ran**, because GitHub runners have
+no GPU. The kernel evidence is 39 device checks against a double-precision
+reference, on five GPUs, in `results/`.
 
 Earlier work here characterised LLM decode as memory-bandwidth-bound and fit a
 roofline across six memory systems. The obvious objection to that work is that
