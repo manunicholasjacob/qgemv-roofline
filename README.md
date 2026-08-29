@@ -3,8 +3,9 @@
 [![build](https://github.com/manunicholasjacob/qgemv-roofline/actions/workflows/build.yml/badge.svg)](https://github.com/manunicholasjacob/qgemv-roofline/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-One decode-path operation, written thirteen ways, measured against a bandwidth
-roof this repository measures for itself.
+One decode-path operation, written twelve ways and benchmarked in thirteen
+configurations, measured against a bandwidth roof this repository measures for
+itself.
 
 **The badge means the code compiles for five architectures and the host-side
 maths is right. It does not mean the kernels ran**, because GitHub runners have
