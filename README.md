@@ -2,6 +2,7 @@
 
 [![build](https://github.com/manunicholasjacob/qgemv-roofline/actions/workflows/build.yml/badge.svg)](https://github.com/manunicholasjacob/qgemv-roofline/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22164007.svg)](https://doi.org/10.5281/zenodo.22164007)
 
 One decode-path operation, written twelve ways and benchmarked in thirteen
 configurations, measured against a bandwidth roof this repository measures for
