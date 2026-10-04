@@ -1,0 +1,29 @@
+{
+  "title": "qgemv-roofline: a quantized GEMV kernel ladder measured against its own bandwidth roof",
+  "description": "Twelve CUDA kernels and a Triton implementation of the batch-1 LLM decode GEMV over ggml q8_0 and q4_0 weights, measured on five NVIDIA GPUs spanning sm_60 to sm_89 against a bandwidth ceiling the harness measures for itself.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Jacob, Manu Nicholas",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0007-6589-6572"
+    }
+  ],
+  "keywords": [
+    "CUDA",
+    "GPU",
+    "roofline",
+    "quantization",
+    "LLM inference"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/manunicholasjacob/qgemv-roofline",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ]
+}
