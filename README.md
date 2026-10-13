@@ -396,3 +396,15 @@ match is timed anyway so that the error is visible rather than fatal.
   layouts so the two are directly comparable. The activation vector and the
   output are three orders of magnitude smaller and are excluded, which flatters
   no kernel over another.
+
+## Citing
+
+The repository is archived on Zenodo. The concept DOI
+[10.5281/zenodo.22164007](https://doi.org/10.5281/zenodo.22164007) always resolves to the latest
+release; `CITATION.cff` carries the full metadata, and GitHub's "Cite this repository" button
+renders it as APA or BibTeX. Author: Manu Nicholas Jacob, Independent Researcher
+([ORCID 0009-0007-6589-6572](https://orcid.org/0009-0007-6589-6572)).
+
+## License
+
+MIT. See `LICENSE`.
