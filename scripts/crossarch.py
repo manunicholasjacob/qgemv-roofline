@@ -348,7 +348,7 @@ def main():
               "devices and not others.\n")
 
     # ------------------------------------------------------- the prediction
-    print("## The advance prediction, and its retraction\n")
+    print("## The advance prediction, tested\n")
     print("fp32 FMA peak below is SMs x cores per SM x 2 x clock. Cores per SM "
           "is an architectural constant rather than a measurement, and the "
           "balance column divides it by the measured roof, so for the "
@@ -378,17 +378,16 @@ def main():
               f"and the ordering is not monotonic.\n")
         lo = min(u, key=lambda d: d["balance"])
         hi = max(u, key=lambda d: d["balance"])
-        print(f"**The prediction is withdrawn.** On two devices it looked "
+        print(f"**The prediction does not hold.** On two devices it looked "
               f"confirmed. With five it is not: {lo['device']} has the *lowest* "
               f"balance of the set and a penalty of {lo['f3']:.2f}x, while "
               f"{hi['device']} has the highest balance and the largest penalty "
               f"at {hi['f3']:.2f}x, which is the opposite of what was "
               f"predicted.\n")
-        print("Two caveats make the retraction firmer rather than softer. Two of "
+        print("Two caveats make that result firmer rather than softer. Two of "
               "the five are cache resident, so their measured roof is not the "
-              "denominator their kernels actually saw. And a two-point trend "
-              "that dies on the third point is exactly the failure mode this "
-              "project has hit before.\n")
+              "denominator their kernels actually saw. And a trend seen on two "
+              "points that breaks on the third was never a trend.\n")
         print("What survives is the part the profiler measured directly: the "
               "`q4_0` penalty is real on every device tested, and its mechanism "
               "is the unpacking arithmetic. What does not survive is any claim "

@@ -116,7 +116,7 @@ Three predictions were written into the notebook before it ran.
 
    **Confirmed as a ratio**, consistently and on every device. `q4_0` also executes more instructions than `q8_0` while reading 47% fewer bytes, which is the same statement counted a different way. It is worth being precise about what is not confirmed: the ratio exceeds 1.0, meaning compute actually dominates, on some devices and not others.
 
-## The advance prediction, and its retraction
+## The advance prediction, tested
 
 fp32 FMA peak below is SMs x cores per SM x 2 x clock. Cores per SM is an architectural constant rather than a measurement, and the balance column divides it by the measured roof, so for the cache-resident parts that denominator is wrong too.
 
@@ -138,9 +138,9 @@ The prediction, written down after the laptop run and before any cloud run: find
 
 Pearson correlation across 5 devices: **r = -0.85**, and the ordering is not monotonic.
 
-**The prediction is withdrawn.** On two devices it looked confirmed. With five it is not: NVIDIA A100-SXM4-40GB has the *lowest* balance of the set and a penalty of 1.70x, while NVIDIA L4 has the highest balance and the largest penalty at 0.66x, which is the opposite of what was predicted.
+**The prediction does not hold.** On two devices it looked confirmed. With five it is not: NVIDIA A100-SXM4-40GB has the *lowest* balance of the set and a penalty of 1.70x, while NVIDIA L4 has the highest balance and the largest penalty at 0.66x, which is the opposite of what was predicted.
 
-Two caveats make the retraction firmer rather than softer. Two of the five are cache resident, so their measured roof is not the denominator their kernels actually saw. And a two-point trend that dies on the third point is exactly the failure mode this project has hit before.
+Two caveats make that result firmer rather than softer. Two of the five are cache resident, so their measured roof is not the denominator their kernels actually saw. And a trend seen on two points that breaks on the third was never a trend.
 
 What survives is the part the profiler measured directly: the `q4_0` penalty is real on every device tested, and its mechanism is the unpacking arithmetic. What does not survive is any claim to predict its size from a datasheet.
 

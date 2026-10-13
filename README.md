@@ -13,9 +13,9 @@ maths is right. It does not mean the kernels ran**, because GitHub runners have
 no GPU. The kernel evidence is 39 device checks against a double-precision
 reference, on five GPUs, in `results/`.
 
-Earlier work here characterised LLM decode as memory-bandwidth-bound and fit a
-roofline across six memory systems. The obvious objection to that work is that
-it measures other people's kernels. This is the code that hits the wall, written
+Earlier work characterised LLM decode on CPUs as memory-bandwidth-bound. The
+obvious objection to that kind of work is that it measures other people's
+kernels. This is the code that hits the wall, written
 from scratch, with the optimisation sequence and the failures left in.
 
 **Everything below was measured on the hardware it names.** No figure is
@@ -340,6 +340,28 @@ nibble order, and the byte counts every GB/s figure depends on.
 A green badge here means the code builds and the host-side maths is right. It
 does not mean the kernels were run. Conflating those would be the exact failure
 this repository is about.
+
+## Run it on your GPU
+
+The cloud runs in `results/` came from one self-contained notebook that embeds the
+kernels, checks every one against the double-precision reference, then times them and
+measures that GPU's own streaming-read ceiling. It names its output file after the GPU it
+actually got, not the one it asked for.
+
+1. Open [`notebooks/qgemv_portable.ipynb`](notebooks/qgemv_portable.ipynb) in
+   [Colab](https://colab.research.google.com/github/manunicholasjacob/qgemv-roofline/blob/main/notebooks/qgemv_portable.ipynb)
+   or Kaggle, on any NVIDIA GPU runtime, and run all cells.
+2. It writes `colab_<your_gpu>_results.json` (on Colab it also offers the download).
+3. Open an issue with the **GPU results** template and attach that file, or post it in
+   Discussions. Say which runtime it was and whether anything else was running.
+
+`scripts/crossarch.py` picks up any `colab_*_results.json` or `kaggle_*_results.json` in
+`results/`, so a submitted file goes into the cross-architecture tables as it is, with the
+card that produced it named. A result that disagrees with the ones here is the most useful
+kind.
+
+On your own machine with the CUDA toolkit, `make bench ARCH=sm_XX DEVICE=<name>` writes
+`results/*_<name>.jsonl` without touching the shipped RTX 3050 files.
 
 ## Reproducing
 
