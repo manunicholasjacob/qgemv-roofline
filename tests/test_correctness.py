@@ -6,9 +6,10 @@ report into a pass or fail with a stated tolerance, so that a regression is
 noisy rather than a slightly larger number in a table nobody reads.
 
 Tolerance: 1e-5 on the maximum relative error, against the largest element of
-the reference vector. Measured worst case across nine kernels and two shapes is
-4.5e-7, so the gate sits about twenty times above the observed noise. It is a
-regression detector, not a claim that the kernels are accurate to 1e-5.
+the reference vector. Measured worst case across all thirteen configurations
+and three shapes is 5.6e-7, so the gate sits about twenty times above the
+observed noise. It is a regression detector, not a claim that the kernels are
+accurate to 1e-5.
 """
 
 import json

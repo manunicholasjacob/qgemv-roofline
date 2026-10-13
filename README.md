@@ -307,16 +307,19 @@ hypothesis is worth more than one that was never tried.
 ## Layout
 
 ```
-src/qgemv_kernels.cuh   nine kernels: two formats x {AoS, SoA} x {x global, x shared}
+src/qgemv_kernels.cuh   twelve kernels: two formats x {AoS, SoA} x {x global, x shared},
+                        plus the split-row and fast-unpack variants
 src/bench.cu            correctness against a double-precision CPU reference, then timing
 python/qformats.py      ggml q8_0 and q4_0 in pure PyTorch, no GPU needed
 python/triton_qgemv.py  the same kernel in Triton, plus PyTorch reference and cuBLAS
 scripts/energy_probe.py NVML monotonic energy counter, two reads per window, never sampled
 scripts/summarize.py    regenerates docs/RESULTS.md from results/
-scripts/crossarch.py    regenerates docs/CROSS_ARCH.md across every device
+scripts/crossarch.py    regenerates docs/CROSS_ARCH.md from the local and cloud runs
 scripts/figures.py      the three figures, from results/
 scripts/make_portable_notebook.py  embeds src/ into a notebook for Kaggle or Colab
-scripts/crossarch.py    regenerates docs/CROSS_ARCH.md from the local and cloud runs
+scripts/make_deep_notebook.py      the longer per-GPU notebook (sweeps, Nsight Compute, sanitizer)
+notebooks/              the generated notebooks; qgemv_portable.ipynb runs on any NVIDIA GPU
+tests/                  on-device correctness gate and the CPU-only quantizer checks used in CI
 results/                every measurement: local as JSONL, cloud runs as JSON
 ```
 
@@ -373,8 +376,9 @@ make summary    # regenerate docs/RESULTS.md
 ```
 
 Correctness runs on every kernel before it is timed, against a double-precision
-CPU reference over the same quantized bytes. Maximum relative error across all
-nine kernels and both shapes is `4.5e-07`, and a kernel whose output does not
+CPU reference over the same quantized bytes. Maximum relative error on this card
+is `4.5e-07` at the two model shapes and `5.6e-07` including the 408 MiB shape,
+across all thirteen configurations, and a kernel whose output does not
 match is timed anyway so that the error is visible rather than fatal.
 
 ## Method notes worth stating

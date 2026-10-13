@@ -50,6 +50,9 @@ def build(target):
     kernels = (ROOT / "src" / "qgemv_kernels.cuh").read_text(encoding="utf-8")
     bench = (ROOT / "src" / "bench.cu").read_text(encoding="utf-8")
     triton_src = (ROOT / "python" / "triton_qgemv.py").read_text(encoding="utf-8")
+    # triton_qgemv.py imports the ggml format code from qformats.py, so both
+    # files have to be written next to each other in the notebook VM.
+    qformats_src = (ROOT / "python" / "qformats.py").read_text(encoding="utf-8")
 
     md(f"""
 # Quantized GEMV, comprehensive run: {label}
@@ -423,7 +426,9 @@ than 1.06, so it is the reference for what the memory system does when nothing
 is quantized.
 """)
 
-    code("TRITON = r'''" + triton_src.replace("'''", "\\'\\'\\'") + "'''\n"
+    code("QFORMATS = r'''" + qformats_src.replace("'''", "\\'\\'\\'") + "'''\n"
+         "(SRC / 'qformats.py').write_text(QFORMATS)\n"
+         "TRITON = r'''" + triton_src.replace("'''", "\\'\\'\\'") + "'''\n"
          "(SRC / 'triton_qgemv.py').write_text(TRITON)\n"
          "out = []\n"
          "for m in [11008, M_big]:\n"

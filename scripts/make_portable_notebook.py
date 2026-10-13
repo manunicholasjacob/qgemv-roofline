@@ -39,11 +39,17 @@ TARGETS = {
 }
 
 
+COLAB_GPU = {"t4": "T4", "l4": "L4", "a100": "A100", "any": "T4"}
+
+
 def build(target="any"):
     expect, label, arch_hint = TARGETS[target]
     kernels = (ROOT / "src" / "qgemv_kernels.cuh").read_text(encoding="utf-8")
     bench = (ROOT / "src" / "bench.cu").read_text(encoding="utf-8")
     triton_src = (ROOT / "python" / "triton_qgemv.py").read_text(encoding="utf-8")
+    # triton_qgemv.py imports the ggml format code from qformats.py, so both
+    # files have to be written next to each other in the notebook VM.
+    qformats_src = (ROOT / "python" / "qformats.py").read_text(encoding="utf-8")
 
     if expect:
         md(f"""
@@ -57,7 +63,7 @@ contain P100 data. The next cell checks what you actually got and says so
 loudly.
 
 One decode-path operation, `y = W x` with W quantized to ggml `q8_0` or `q4_0`,
-written nine ways, identical sources to the RTX 3050 run. Results are written to
+written twelve ways, identical sources to the RTX 3050 run. Results are written to
 a filename derived from the **actual** device, never the expected one, so a
 substituted runtime cannot produce a mislabelled file.
 
@@ -69,7 +75,7 @@ notebook names. Nothing is extrapolated.
 # Quantized GEMV: the same kernel ladder, on whatever GPU this is
 
 One decode-path operation, `y = W x` with W quantized to ggml `q8_0` or `q4_0`,
-written nine ways. The local run is an RTX 3050 Laptop (sm_86, 4 GB, GDDR6).
+written twelve ways. The local run is an RTX 3050 Laptop (sm_86, 4 GB, GDDR6).
 This notebook runs the identical sources on a datacenter part so the shape of
 the optimisation ladder can be compared across memory systems.
 
@@ -347,7 +353,9 @@ if has_counter:
     results["energy"] = energy
 """)
 
-    code("TRITON = r'''" + triton_src.replace("'''", "\\'\\'\\'") + "'''\n"
+    code("QFORMATS = r'''" + qformats_src.replace("'''", "\\'\\'\\'") + "'''\n"
+         "(SRC / 'qformats.py').write_text(QFORMATS)\n"
+         "TRITON = r'''" + triton_src.replace("'''", "\\'\\'\\'") + "'''\n"
          "(SRC / 'triton_qgemv.py').write_text(TRITON)\n"
          "r = subprocess.run([sys.executable, str(SRC / 'triton_qgemv.py'),\n"
          "                    '--M','11008','--K','4096'], capture_output=True, text=True)\n"
@@ -373,6 +381,10 @@ except Exception as e:
         "metadata": {
             "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
             "language_info": {"name": "python"},
+            # Opening the notebook from GitHub in Colab then starts on a GPU
+            # runtime instead of a CPU one. T4 is the free-tier part.
+            "accelerator": "GPU",
+            "colab": {"provenance": [], "gpuType": COLAB_GPU[target]},
         },
         "nbformat": 4,
         "nbformat_minor": 5,

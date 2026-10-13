@@ -12,6 +12,8 @@ authors:
     orcid: "https://orcid.org/0009-0007-6589-6572"
     affiliation: "Independent Researcher"
 type: software
+version: "1.0.0"
+date-released: "2026-08-29"
 license: MIT
 repository-code: "https://github.com/manunicholasjacob/qgemv-roofline"
 keywords:
