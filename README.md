@@ -397,6 +397,14 @@ match is timed anyway so that the error is visible rather than fatal.
   output are three orders of magnitude smaller and are excluded, which flatters
   no kernel over another.
 
+## Related tools
+
+Other tools by the same author for people measuring local LLM inference:
+
+- [llama-roofline](https://github.com/manunicholasjacob/llama-roofline): is your llama.cpp decode memory-bandwidth-bound? One command measures the ceiling and compares.
+- [ml-systems-lab](https://github.com/manunicholasjacob/ml-systems-lab): one YAML config drives llama.cpp and ONNX Runtime sweeps across laptops, Raspberry Pi and GPUs, with power and thermal telemetry.
+- [gguf-faultscope](https://github.com/manunicholasjacob/gguf-faultscope): what one flipped bit does to a quantized GGUF model, and where it has to land to matter.
+
 ## Citing
 
 The repository is archived on Zenodo. The concept DOI
