@@ -1,7 +1,8 @@
 # Security
 
 `qgemv-roofline` is a set of CUDA microbenchmarks and the scripts that summarise
-their output. It runs on hardware you choose and talks to nothing on the network:
+their output. It runs on hardware you choose, and apart from the notebook package
+installs described below it makes no network requests:
 
 - `make` compiles `src/bench.cu` with your local `nvcc`, and `make bench` (and the
   other targets) run that binary on your own GPU and write JSONL into `results/`.
